@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url(./theme.css);
+@import url(./scroll_down.css);
+@import url(./button.css);
+
+html, body, .mainElement {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+.mainElement {
+  position: relative;
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainElement.show {
+  opacity: 1;
+  animation: 0.8s fadeIn;
+  transition: opacity 0.8s linear;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 100%; }
+}
+
+#mainPage { display: block; opacity: 1; }
+
+#embed {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  clip-path: polygon(1.8in 0, 100% 0, 100% 100%, 0 100%, 0 1.8in);
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.511);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#slogan, #blink {
+  display: inline;
+  font-family: 'Major Mono Display', monospace;
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+#blink {
+  position: relative;
+  left: -10px;
+  animation: blinker 1.4s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#mainPage.goaway {
+  position: relative;
+  animation: goawayframe 0.8s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes goawayframe {
+  from { bottom: 0; }
+  to { bottom: 100%; }
+}
+
+#header_sign {
+  position: absolute;
+  z-index: 999;
+  top: 15px;
+  left: 15px;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.mouse_scroll {
+  position: absolute;
+  bottom: 20px;
+}
+
+.horizontal > * {
+  display: inline-block;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  text-align: center;
+}
