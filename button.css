@@ -1,6 +1,6 @@
 a, button {
   text-decoration: none;
-  font-weight: bolder;
+  font-weight: 500;
   color: var(--txt-color);
   padding: 10px 20px 10px 20px;
   position: relative;
