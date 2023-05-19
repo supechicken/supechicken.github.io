@@ -3,34 +3,66 @@
 @import url(./scroll_down.css);
 @import url(./button.css);
 
-html, body, .mainElement {
+/*html {
+  overflow-y: auto;
+}
+
+body {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}*/
+
+html, body, #mainContainer {
   height: 100%;
   width: 100%;
   margin: 0;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
+#mainContainer {
+  overflow-y: hidden;
+  /*scroll-snap-type: y mandatory;*/
+}
+
+/*#mainContainer > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}*/
+
 .mainElement {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
   position: relative;
-  display: none;
-  opacity: 0;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: opacity 1s linear;
 }
 
-.mainElement.show {
+/*.mainElement:not(#mainPage) > * {
+  position: relative;
+  bottom: -100%;
+  transition: bottom cubic-bezier(0, 0, 0.2, 1) 0.8s;
+}
+
+.mainElement:not(#mainPage).show > * {
   opacity: 1;
-  animation: 0.8s fadeIn;
-  transition: opacity 0.8s linear;
+  bottom: 0;
+}*/
+
+.fadeIn {
+  opacity: 1;
+  animation: 1s fadeIn;
+  transition: opacity 1s linear;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 100%; }
 }
-
-#mainPage { display: block; opacity: 1; }
 
 #embed {
   height: 100%;
@@ -73,16 +105,6 @@ html, body, .mainElement {
   }
 }
 
-#mainPage.goaway {
-  position: relative;
-  animation: goawayframe 0.8s cubic-bezier(0, 0, 0.2, 1);
-}
-
-@keyframes goawayframe {
-  from { bottom: 0; }
-  to { bottom: 100%; }
-}
-
 #header_sign {
   position: absolute;
   z-index: 999;
@@ -93,6 +115,7 @@ html, body, .mainElement {
   border-radius: 100%;
   cursor: pointer;
 }
+
 
 .mouse_scroll {
   position: absolute;
