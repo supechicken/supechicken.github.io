@@ -21,7 +21,7 @@ mainContainer.onwheel = mainContainer.ontouchmove = e => {
     mainContainer.scrollTo({ top: targetPos, behavior: 'smooth' });
 
     const interval = setInterval(() => {
-      if (Math.round(mainContainer.scrollTop - targetPos)) {
+      if (Math.round(mainContainer.scrollTop - targetPos) < 1) {
         clearInterval(interval);
         setTimeout(() => {
           lock = false;
