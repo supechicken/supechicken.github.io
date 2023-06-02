@@ -1,6 +1,8 @@
 a, button {
   text-decoration: none;
   font-weight: 500;
+  min-width: 1in;
+  text-align: center;
   color: var(--txt-color);
   padding: 10px 20px 10px 20px;
   position: relative;
