@@ -10,16 +10,22 @@
   <link rel="preload" href="css/stylesheet.css" as="style" />
   <link rel="preload" href="css/scroll_down.css" as="style" />
   <link rel="preload" href="css/button.css" as="style" />
-  <link rel="preload" href="index.js" as="script" />
+  <link rel="preload" href="js/smoothscroll.min.js" as="script" />
+  <link rel="preload" href="js/index.js" as="script" />
 
   <link rel="stylesheet" href="css/stylesheet.css">
-  <script src="index.js" defer></script>
+  <script src="js/smoothscroll.min.js" defer></script>
+  <script src="js/index.js" defer></script>
 </head>
 
 <body>
   <div id="mainContainer">
     <div id="mainPage" class="mainElement">
-      <video id="embed" src="background_30fps_low_bitrate.mp4" muted autoplay loop></video>
+      <video id="embed" muted autoplay loop>
+        <source src="video/background.webm" type="video/webm" />
+        <source src="video/background.mp4" type="video/mp4" />
+      </video>
+
       <img id="header_sign" src="images/icon.jpeg">
       <div id="overlay">
         <div>
@@ -40,8 +46,8 @@
     </div>
     <div id="endPage" class="mainElement">
       <h1>About me</h1>
-      <p>未諗到要係度寫咩...</p>
-      <div class="horizontal">
+      <p>一個視 coding/programming 為興趣嘅人...</p>
+      <div id="linklist">
         <a href="https://www.instagram.com/supechicken/">Instagram</a>
         <a href="https://github.com/supechicken">GitHub</a>
         <a href="https://www.youtube.com/@supechicken666">YouTube</a>
