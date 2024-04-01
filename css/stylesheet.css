@@ -39,6 +39,7 @@ body, #innerPage {
   width: 100%;
   z-index: 0;
 
+  filter: blur(20px);
   object-fit: cover;
   transition: height ease 3s, width ease 3s, object-position ease 3s;
 }

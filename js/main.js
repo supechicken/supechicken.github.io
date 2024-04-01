@@ -84,6 +84,7 @@ function startScrollTrigger() {
 }
 
 background_and_banner.oncanplay = () => {
+  background_and_banner.style.filter    = 'blur(20px)';
   background_and_banner.style.animation = 'fadeInAnimation ease 2s';
 }
 
