@@ -3,13 +3,14 @@
 @import url('switch_pages.css');
 
 html, body {
-  font-family: 'PingFang', 'Google Sans', sans-serif;
-  overflow: hidden;
-  background-color: #202124;
-  color: #ebebeb;
   height: 100%;
   width: 100%;
   margin: 0;
+  overflow: hidden;
+
+  font-family: 'PingFang', 'Google Sans', sans-serif;
+  background-color: #202124;
+  color: #ebebeb;
 }
 
 h1, h2, h3, h4 {
