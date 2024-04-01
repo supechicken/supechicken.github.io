@@ -84,8 +84,8 @@ function startScrollTrigger() {
 }
 
 background_and_banner.oncanplay = () => {
-  background_and_banner.style.filter    = 'blur(0)';
   background_and_banner.style.animation = 'fadeInAnimation ease 2s';
+  background_and_banner.style.filter    = 'blur(0)';
 }
 
 window.onload = async () => {
