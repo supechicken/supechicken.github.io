@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="img/avator.jpg alt="avator" />
+  <img height="180" width="180" src="img/icon/512.png" alt="avator" />
   <h1>My website</h1>
   <p>My website, hosted on both GitHub Pages and my server</p>
 </div>
