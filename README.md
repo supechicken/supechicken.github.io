@@ -6,4 +6,4 @@
 
 ## Available on
 - [supechicken666.top](https://supechicken666.top)
-- [supechicken666.github.io](https://supechicken.github.io)
+- [supechicken.github.io](https://supechicken.github.io)
