@@ -21,6 +21,10 @@ h1, h2, h3, h4, p, a {
   text-align: center;
 }
 
+video, img {
+  pointer-events: none;
+}
+
 body, #innerPage {
   display: flex;
   justify-content: center;
