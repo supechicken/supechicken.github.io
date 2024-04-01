@@ -83,7 +83,7 @@ function startScrollTrigger() {
   }
 }
 
-background_and_banner.onloadeddata = () => {
+background_and_banner.oncanplay = () => {
   background_and_banner.style.animation = 'fadeInAnimation ease 2s';
 }
 
