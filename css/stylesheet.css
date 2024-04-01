@@ -40,8 +40,6 @@ body, #innerPage {
   z-index: 0;
 
   object-fit: cover;
-
-  animation: fadeInAnimation ease 2s;
   transition: height ease 3s, width ease 3s, object-position ease 3s;
 }
 

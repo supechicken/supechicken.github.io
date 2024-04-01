@@ -1,11 +1,16 @@
+const intro                 = document.getElementById('intro'),
+      iconList              = document.getElementById('iconList'),
+      scrollAnimation       = document.getElementById('scrollAnimation'),
+      background_and_banner = document.getElementById('background_and_banner'),
+      innerPage             = document.getElementById('innerPage'),
+      typebox               = document.getElementById('typeBox');
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function startTyping() {
   const script    = '人們為何選擇沉睡？\0\0\0\0\n\n我想...\0\0\0\0\0\0\n\n是因為害怕從『夢』中醒來...',
-        innerPage = document.getElementById('innerPage'),
-        typebox   = document.getElementById('typeBox'),
         textArea  = typebox.querySelector('.textArea'),
         blinker   = typebox.querySelector('.blinker');
 
@@ -76,6 +81,10 @@ function startScrollTrigger() {
       setTimeout(() => lock = false, 3000);
     }
   }
+}
+
+background_and_banner.onloadeddata = () => {
+  background_and_banner.style.animation = 'fadeInAnimation ease 2s';
 }
 
 window.onload = async () => {
