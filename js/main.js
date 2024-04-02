@@ -16,7 +16,7 @@ async function startTyping() {
 
   const interval = setInterval(() => {
     if (getComputedStyle(innerPage).display === 'none') {
-      textArea.innerText = '';
+      textArea.innerText    = '';
       blinker.style.opacity = '0';
       clearInterval(interval);
     }
@@ -30,6 +30,8 @@ async function startTyping() {
       break;
     }
   }, 500);
+
+  textArea.innerText = '';
 
   for (const char of script) {
     if (getComputedStyle(innerPage).display === 'none') break;
@@ -62,7 +64,9 @@ async function nextPage() {
 }
 
 function startScrollTrigger() {
-  let lock = false, touchPos = 0;
+  let isInnerPage = false,
+      lock        = false,
+      touchPos    = 0;
 
   document.body.ontouchstart = e => touchPos = e.changedTouches[0].clientY;
 
@@ -73,12 +77,22 @@ function startScrollTrigger() {
       background_and_banner.play();
 
       if ((e.deltaY ? e.deltaY : touchPos - e.changedTouches[0].clientY) > 0) {
-        nextPage();
+        if (!isInnerPage) {
+          nextPage();
+          isInnerPage = true;
+        } else {
+          lock = false
+        }
       } else {
-        goBack();
+        if (isInnerPage) {
+          goBack();
+          isInnerPage = false;
+        } else {
+          lock = false;
+        }
       }
 
-      setTimeout(() => lock = false, 3000);
+      setTimeout(() => lock = false, 2800);
     }
   }
 }
