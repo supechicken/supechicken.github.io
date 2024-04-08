@@ -5,5 +5,6 @@
 </div>
 
 ## Available on
+- [supechicken666.dev](https://supechicken666.dev)
 - [supechicken666.top](https://supechicken666.top)
 - [supechicken.github.io](https://supechicken.github.io)
