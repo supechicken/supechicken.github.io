@@ -70,9 +70,11 @@ function startScrollTrigger() {
       lock        = false,
       touchPos    = 0;
 
-  document.body.ontouchstart = e => touchPos = e.changedTouches[0].clientY;
+  document.body.addEventListener('touchstart', e => touchPos = e.changedTouches[0].clientY);
 
-  document.body.onwheel = document.body.ontouchmove = e => {
+  const listener = e => {
+    e.preventDefault();
+
     if (!lock) {
       lock = true;
 
@@ -94,7 +96,10 @@ function startScrollTrigger() {
 
       setTimeout(() => lock = false, 2800);
     }
-  }
+  };
+
+  document.body.addEventListener('wheel', listener, { passive: false });
+  document.body.addEventListener('touchmove', listener, { passive: false });
 }
 
 window.onload = () => startScrollTrigger();
