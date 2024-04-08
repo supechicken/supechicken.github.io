@@ -31,7 +31,7 @@ body, #innerPage {
   align-items: center;
 }
 
-#background_and_banner {
+#background {
   position: fixed;
 
   top: 0;
@@ -42,6 +42,11 @@ body, #innerPage {
   filter: blur(20px);
   object-fit: cover;
   transition: height ease 3s, width ease 3s, object-position ease 3s;
+}
+
+#background.playing {
+  animation: fadeInAnimation ease 2s;
+  filter: blur(0);
 }
 
 #intro {

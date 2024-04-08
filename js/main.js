@@ -1,9 +1,9 @@
-const intro                 = document.getElementById('intro'),
-      iconList              = document.getElementById('iconList'),
-      scrollAnimation       = document.getElementById('scrollAnimation'),
-      background_and_banner = document.getElementById('background_and_banner'),
-      innerPage             = document.getElementById('innerPage'),
-      typebox               = document.getElementById('typeBox');
+const intro           = document.getElementById('intro'),
+      iconList        = document.getElementById('iconList'),
+      scrollAnimation = document.getElementById('scrollAnimation'),
+      background      = document.getElementById('background'),
+      innerPage       = document.getElementById('innerPage'),
+      typebox         = document.getElementById('typeBox');
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -45,16 +45,18 @@ async function goBack() {
   innerPage.classList.remove('fadeIn');
 
   await sleep(500);
-  intro.className = iconList.className = scrollAnimation.className = background_and_banner.className = '';
+  background.classList.remove('as_banner');
+
+  [intro, iconList, scrollAnimation].forEach(e => e.classList.remove('hidden'));
 
   await sleep(2000);
   innerPage.classList.remove('show');
 }
 
 async function nextPage() {
-  intro.className = iconList.className = scrollAnimation.className = 'hidden';
-  background_and_banner.className = 'as_banner';
+  [intro, iconList, scrollAnimation].forEach(e => e.classList.add('hidden'));
 
+  background.classList.add('as_banner');
   innerPage.classList.add('show');
 
   await sleep(1200);
@@ -73,8 +75,6 @@ function startScrollTrigger() {
   document.body.onwheel = document.body.ontouchmove = e => {
     if (!lock) {
       lock = true;
-
-      background_and_banner.play();
 
       if ((e.deltaY ? e.deltaY : touchPos - e.changedTouches[0].clientY) > 0) {
         if (!isInnerPage) {
@@ -97,11 +97,4 @@ function startScrollTrigger() {
   }
 }
 
-background_and_banner.oncanplay = () => {
-  background_and_banner.style.animation = 'fadeInAnimation ease 2s';
-  background_and_banner.style.filter    = 'blur(0)';
-}
-
-window.onload = async () => {
-  startScrollTrigger();
-}
+window.onload = () => startScrollTrigger();
