@@ -57,7 +57,7 @@ body, #innerPage {
   overflow: hidden;
 
   top: 0;
-  height: 2.8in;
+  height: 3in;
   width: 2.5in;
   padding: 40px;
 
@@ -71,7 +71,7 @@ body, #innerPage {
 
 @media screen and (min-width: 5in) {
   #intro {
-    height: 2.6in;
+    height: 2.8in;
     width: 3.2in;
   }
 }
@@ -170,7 +170,7 @@ body, #innerPage {
   object-fit: contain;
 }
 
-.avator {
+.avatar {
   height: 100px;
   width: 100px;
 
