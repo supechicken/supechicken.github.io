@@ -171,8 +171,8 @@ body, #innerPage {
 }
 
 .avatar {
-  height: 100px;
-  width: 100px;
+  height: 110px;
+  width: 110px;
 
   border-radius: 50%;
   object-fit: contain;
