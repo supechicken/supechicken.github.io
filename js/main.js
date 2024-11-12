@@ -68,7 +68,8 @@ async function nextPage() {
 function startScrollTrigger() {
   let isInnerPage = false,
       lock        = false,
-      touchPos    = 0;
+      touchPos    = 0,
+      newTouchPos = 0;
 
   document.body.addEventListener('touchstart', e => touchPos = e.changedTouches[0].clientY);
 
@@ -76,9 +77,10 @@ function startScrollTrigger() {
     e.preventDefault();
 
     if (!lock) {
-      lock = true;
+      lock        = true;
+      newTouchPos = e.changedTouches[0]?.clientY;
 
-      if ((e.deltaY ? e.deltaY : touchPos - e.changedTouches[0].clientY) > 0) {
+      if ((e.deltaY || (newTouchPos ? touchPos - newTouchPos : 0)) > 0) {
         if (!isInnerPage) {
           nextPage();
           isInnerPage = true;
