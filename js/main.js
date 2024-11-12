@@ -78,7 +78,7 @@ function startScrollTrigger() {
 
     if (!lock) {
       lock        = true;
-      newTouchPos = e.changedTouches[0]?.clientY;
+      newTouchPos = e.changedTouches ? e.changedTouches[0].clientY : null;
 
       if ((e.deltaY || (newTouchPos ? touchPos - newTouchPos : 0)) > 0) {
         if (!isInnerPage) {
